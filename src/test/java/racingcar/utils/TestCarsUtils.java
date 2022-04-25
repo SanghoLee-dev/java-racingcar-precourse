@@ -9,6 +9,7 @@ import racingcar.car.Car;
 import racingcar.car.CarName;
 import racingcar.car.Cars;
 import racingcar.game.InputCarNames;
+import racingcar.game.InputRoundCount;
 import racingcar.racing.RacingCarResult;
 import racingcar.racing.RoundResult;
 import racingcar.racing.WinnerCounts;
@@ -60,5 +61,9 @@ public class TestCarsUtils {
 
     public static RoundResult testGoRoundResult() {
         return RoundResult.report(testCar(), RacingCarResult.GO);
+    }
+
+    public static InputRoundCount testInputRoundCount() {
+        return InputRoundCount.valueOf(String.valueOf(Randoms.pickNumberInRange(1, 10)));
     }
 }
