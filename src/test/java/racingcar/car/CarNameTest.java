@@ -20,7 +20,7 @@ class CarNameTest {
         final CarName carName = CarName.of(name);
 
         // then
-        assertThat(carName.getName()).isEqualTo(name);
+        assertThat(carName.getName()).isEqualTo(name.trim());
     }
 
     @ParameterizedTest
