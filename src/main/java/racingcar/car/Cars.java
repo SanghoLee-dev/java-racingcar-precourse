@@ -73,4 +73,7 @@ public class Cars {
         }
     }
 
+    public Car getCarByIndex(final int index) {
+        return this.cars.get(index);
+    }
 }
