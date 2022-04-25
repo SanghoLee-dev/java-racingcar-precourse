@@ -37,6 +37,10 @@ public class TestCarsUtils {
         return Cars.of(testCarList());
     }
 
+    public static Car testCar() {
+        return Car.of(randomCarName());
+    }
+
     private static CarName randomCarName() {
         return CarName.of("car_" + Randoms.pickNumberInRange(1, 9));
     }
