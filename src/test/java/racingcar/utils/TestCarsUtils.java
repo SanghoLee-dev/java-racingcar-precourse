@@ -9,6 +9,9 @@ import racingcar.car.Car;
 import racingcar.car.CarName;
 import racingcar.car.Cars;
 import racingcar.game.InputCarNames;
+import racingcar.racing.RacingCarResult;
+import racingcar.racing.RoundResult;
+import racingcar.racing.WinnerCounts;
 
 public class TestCarsUtils {
 
@@ -43,5 +46,19 @@ public class TestCarsUtils {
 
     private static CarName randomCarName() {
         return CarName.of("car_" + Randoms.pickNumberInRange(1, 9));
+    }
+
+    public static WinnerCounts testWinnerCounts() {
+        final WinnerCounts winnerCounts = WinnerCounts.init();
+        winnerCounts.countingCars(testCars());
+        return winnerCounts;
+    }
+
+    public static RoundResult testRandomRoundResult() {
+        return RoundResult.report(testCar(), Randoms.pickNumberInRange(0, 1) == 0 ? RacingCarResult.GO : RacingCarResult.STOP);
+    }
+
+    public static RoundResult testGoRoundResult() {
+        return RoundResult.report(testCar(), RacingCarResult.GO);
     }
 }
