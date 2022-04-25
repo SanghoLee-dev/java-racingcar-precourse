@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import racingcar.car.Car;
 import racingcar.car.CarName;
+import racingcar.car.Cars;
 import racingcar.game.InputCarNames;
 
 public class TestCarsUtils {
@@ -30,6 +31,10 @@ public class TestCarsUtils {
         }
 
         return InputCarNames.valueOf(join(DELIMITER, carStringList));
+    }
+
+    public static Cars testCars() {
+        return Cars.of(testCarList());
     }
 
     private static CarName randomCarName() {
